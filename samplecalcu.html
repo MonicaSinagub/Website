@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sample Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            font-family: 'Times New Roman', serif;
+        }
+        .calculator-box {
+            width: 400px;
+            margin: 20px auto;
+            border: 2px solid #333;
+            border-collapse: collapse;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        td {
+            border: 1px solid #ccc;
+            padding: 15px;
+            text-align: left;
+        }
+        input[type="number"] {
+            width: 95%;
+            padding: 6px;
+            border: 1px solid #1a0e0ee1;
+        }
+        .btn-row {
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 15px;
+        }
+        button {
+            background-color: #110202;
+            color: rgb(228, 7, 7);
+            border: none;
+            border-radius: 8px;
+            padding: 12px 30px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #3560d0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Sample Calculator</h1>
+
+    <div class="calculator-box">
+        <table>
+            <tr>
+                <td>First Number:</td>
+                <td><input type="number" id="firstNumber" placeholder="Enter first number"></td>
+            </tr>
+            <tr>
+                <td>Second Number:</td>
+                <td><input type="number" id="secondNumber" placeholder="Enter second number"></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="btn-row">
+                    <button onclick="compute()">Compute</button>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="btn-row">
+                    <button onclick="resetForm()">Reset</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        function compute() {
+            // Add your computation logic here
+            alert("Compute clicked!");
+        }
+        function resetForm() {
+            document.getElementById("firstNumber").value = "";
+            document.getElementById("secondNumber").value = "";
+        }
+    </script>
+
+</body>
+</html>
