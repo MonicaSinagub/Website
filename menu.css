@@ -1,5 +1,5 @@
 .navbar {
- background-color: #ee5d94; /* Primary Navy */
+ background-color: #e457b5; /* Primary Navy */
  width: 100%;
  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -35,22 +35,22 @@
 }
 /* 3. Mouse hover state */
 .nav-link:hover {
- background-color: #f05c81;
+ background-color: #e457b5;
  color: #FFFFFF;
 }
 /* 4. Keyboard focus state (Accessibility / WCAG compliance) */
 .nav-link:focus {
  outline: 3px solid #e457b5;
  outline-offset: -3px;
- background-color: #ff72a1;
+ background-color: #e457b5;
 }
 /* 5. Active click-press state */
 .nav-link:active {
- background-color: #e681ab;
+ background-color: #e457b5;
  transform: translateY(1px);
 }
 /* 6. Current page highlight class */
 .nav-link.active {
- background-color: #f76ed5;
- border-bottom: 4px solid #f166a7;
+ background-color: #e457b5;
+ border-bottom: 4px solid #e457b5;
 }
