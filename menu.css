@@ -1,5 +1,5 @@
 .navbar {
- background-color: #d47182; /* Primary Navy */
+ background-color: #ee5d94; /* Primary Navy */
  width: 100%;
  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -14,7 +14,7 @@
 }
 
 .nav-link {
- display: block; /* Expands clickable box to fill padding */
+ display: block; /* Expands clickable box to fill padding */ 
  padding: 14px 20px; /* Breathing room inside target box */
  color: #FFFFFF; /* High-contrast text color */
  text-decoration: none; /* Removes standard underline */
@@ -35,14 +35,14 @@
 }
 /* 3. Mouse hover state */
 .nav-link:hover {
- background-color: #f07997;
+ background-color: #f05c81;
  color: #FFFFFF;
 }
 /* 4. Keyboard focus state (Accessibility / WCAG compliance) */
 .nav-link:focus {
- outline: 3px solid #c95467;
+ outline: 3px solid #e457b5;
  outline-offset: -3px;
- background-color: #b35a62;
+ background-color: #ff72a1;
 }
 /* 5. Active click-press state */
 .nav-link:active {
@@ -51,6 +51,6 @@
 }
 /* 6. Current page highlight class */
 .nav-link.active {
- background-color: #9c0075;
- border-bottom: 4px solid #f36161;
+ background-color: #f76ed5;
+ border-bottom: 4px solid #f166a7;
 }
