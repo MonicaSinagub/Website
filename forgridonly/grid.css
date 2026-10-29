@@ -5,13 +5,13 @@
 }
 
 body{
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(200, 200, 200);
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     min-height:200vh;
 }
 
 .box{
-    background-color: #fc45d4;
+    background-color: #f246cd;
     background-image: linear-gradient(#ef1bf7,#f01cde);
     font-size:2rem;
     padding:0.5rem;
