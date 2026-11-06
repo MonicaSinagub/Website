@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Ginawang pink ang HTML at BODY para siguradong buong screen ang magbago */
+html, body {
+    background-color: #ffc0cb !important; /* Pink Background */
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    min-height: 100vh;
+}
+
+h2 {
+    color: #4a1525;
+    font-weight: 600;
+}
+
+/* Container */
+.gallery-container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Carousel Container */
+.carousel {
+    max-width: 650px;
+    position: relative;
+    margin: auto;
+    background: #fff;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.15);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Carousel Slides */
+.carousel-slide {
+    display: none;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Inayos ang Next & Previous Buttons para nasa Gitna ng gilid */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* Nilagay sa eksaktong gitna vertically */
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.3s ease;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%; /* Ginawang bilog para mas maganda tingnan */
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.prev {
+    left: 15px; /* Lumayo ng kaunti sa kaliwang gilid */
+}
+
+.next {
+    right: 15px; /* Lumayo ng kaunti sa kanang gilid */
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption Text */
+.carousel-caption {
+    color: #fff;
+    font-size: 14px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px 0;
+    text-align: center;
+}
+
+/* Dots / Indicators Container (Centered) */
+.dots-container {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.dot {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.4s ease;
+}
+
+.active, .dot:hover {
+    background-color: #d81b60; /* Matingkad na pink sa napiling dot */
+}
+
+/* Fade Effect */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
