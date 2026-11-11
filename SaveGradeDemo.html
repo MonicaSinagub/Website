@@ -24,7 +24,7 @@
     <label>Grade:</label>
     <input type="text" id="txtGrade" placeholder="0-100">
     <button id="btnSave">Save</button>
-    <button id="btnCancel">Cancel</button>
+   
   </div>
 
   <table>
@@ -46,7 +46,7 @@
   var txtSubject = document.getElementById("txtSubject");
   var txtGrade = document.getElementById("txtGrade");
   var btnSave = document.getElementById("btnSave");
-  var btnCancel = document.getElementById("btnCancel");
+  
   var tableBody = document.getElementById("tableBody");
 
   var grades = JSON.parse(localStorage.getItem("grades")) || [];
