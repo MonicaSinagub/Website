@@ -1,136 +1,163 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Save Grades</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 20px; }
-    .form-container { margin-bottom: 20px; }
-    input { margin-right: 10px; padding: 5px; }
-    button { padding: 5px 12px; cursor: pointer; }
-    table, th, td { border: 1px solid black; border-collapse: collapse; padding: 5px 10px; }
-    #btnCancel { display: none; background: #ccc; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save Grades Demo</title>
 </head>
 <body>
-  <h1>Save Grades</h1>
+    <h1><center> Save Grades </center></h1>
+    <center>
+          <form action="#" method="post" autocomplete="on">
+        <p>
+            <label for="student-LRN">LRN:</label>
+            <input type="text" id="student-LRN" name="student_LRN" placeholder="Enter LRN" maxlength="12">
+        
 
-  <div class="form-container">
-    <label>LRN:</label>
-    <input type="text" id="txtLRN" maxlength="11" placeholder="11 digits">
-    <label>Name:</label>
-    <input type="text" id="txtName">
-    <label>Subject:</label>
-    <input type="text" id="txtSubject">
-    <label>Grade:</label>
-    <input type="text" id="txtGrade" placeholder="0-100">
-    <button id="btnSave">Save</button>
-    <button id="btnCancel">Cancel</button>
-  </div>
+            <label for="student-name">Name:</label>
+            <input type="text" id="student-name" name="student_name" placeholder="Enter Name" maxlength="50">
 
-  <table>
-    <thead>
-      <tr>
-        <th>LRN</th>
-        <th>Name</th>
-        <th>Subject</th>
-        <th>Grade</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody id="tableBody"></tbody>
-  </table>
 
-<script>
-  var txtLRN = document.getElementById("txtLRN");
-  var txtName = document.getElementById("txtName");
-  var txtSubject = document.getElementById("txtSubject");
-  var txtGrade = document.getElementById("txtGrade");
-  var btnSave = document.getElementById("btnSave");
-  var btnCancel = document.getElementById("btnCancel");
-  var tableBody = document.getElementById("tableBody");
+            <label for="student-subject">Subject:</label>
+            <input type="text" id="student-subject" name="student_subject" placeholder="Enter Subject">
 
-  var grades = JSON.parse(localStorage.getItem("grades")) || [];
-  var editIndex = -1;
 
-  function saveToStorage() {
-    localStorage.setItem("grades", JSON.stringify(grades));
-  }
+            <label for="student-grade">Grade:</label>
+            <input type="text" id="student-grade" name="student_grade" placeholder="Enter Grade">
 
-  function renderTable() {
-    tableBody.innerHTML = "";
-    grades.forEach(function(item, index) {
-      var row = tableBody.insertRow();
-      row.insertCell(0).textContent = item.lrn;
-      row.insertCell(1).textContent = item.name;
-      row.insertCell(2).textContent = item.subject;
-      row.insertCell(3).textContent = item.grade;
 
-      var actionCell = row.insertCell(4);
-      actionCell.innerHTML = '<button onclick="editGrade(' + index + ')">update</button>';
-    });
-  }
+            <input type="button" id="btnSave" value ="Save">
+        </p>
 
-  function clearForm() {
-    txtLRN.value = "";
-    txtName.value = "";
-    txtSubject.value = "";
-    txtGrade.value = "";
-    editIndex = -1;
-    btnSave.textContent = "Save";
-    btnCancel.style.display = "none";
-    txtLRN.focus();
-  }
+        <p id="message"></p>
 
-  btnSave.onclick = function() {
-    var lrnValue = txtLRN.value.trim();
-    var nameValue = txtName.value.trim();
-    var subjectValue = txtSubject.value.trim();
-    var gradeValue = txtGrade.value.trim();
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>LRN</th>
+                    <th>Name</th>
+                    <th>Subject</th>
+                    <th>Grade</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+        </table>
+        </form>
+        <script>
+        var txtLRN = document.getElementById("student-LRN");
+        var txtName = document.getElementById("student-name");
+        var txtSubject = document.getElementById("student-subject");
+        var txtGrade = document.getElementById("student-grade");
+        var btnSave = document.getElementById("btnSave");
+        var message = document.getElementById("message");
+        var tableBody = document.getElementById("tableBody");
 
-    if (lrnValue == "" || nameValue == "" || subjectValue == "" || gradeValue == "") {
-      alert("Please fill up all fields!");
-      return;
-    }
-    if (!/^\d{11}$/.test(lrnValue)) {
-      alert("LRN must be exactly 11 numbers!");
-      return;
-    }
-    if (isNaN(gradeValue) || gradeValue < 0 || gradeValue > 100) {
-      alert("Grade must be a number from 0 to 100!");
-      return;
-    }
+        var grades = JSON.parse(localStorage.getItem("grades")) || [];
 
-    var data = { lrn: lrnValue, name: nameValue, subject: subjectValue, grade: gradeValue };
+        var selectedIndex = -1;
 
-    if (editIndex === -1) {
-      grades.push(data);
-    } else {
-      grades[editIndex] = data;
-      alert("Updated successfully!");
-    }
+        function showGrades() {
+            tableBody.textContent = "";
+            for (var i = 0; i < grades.length; i++) {
+                var row = tableBody.insertRow();
+                row.insertCell().textContent = grades[i].lrn;
+                row.insertCell().textContent = grades[i].name;
+                row.insertCell().textContent = grades[i].subject;
+                row.insertCell().textContent = grades[i].grade;
 
-    saveToStorage();
-    renderTable();
-    clearForm();
-  };
+                var actionCell = row.insertCell();
 
-  window.editGrade = function(index) {
-    var item = grades[index];
-    txtLRN.value = item.lrn;
-    txtName.value = item.name;
-    txtSubject.value = item.subject;
-    txtGrade.value = item.grade;
-    editIndex = index;
-    btnSave.textContent = "Update";
-    btnCancel.style.display = "inline-block";
-    txtLRN.focus();
-  };
+                actionCell.appendChild(makeUpdateButton(i));
+                actionCell.appendChild(makeDeleteButton(i));
+            }
+        }
+        function makeUpdateButton(index) {
+                var button = document.createElement("button");
+                button.textContent = "Update";
+                button.type = "button";
+                button.addEventListener("click", function () {
+                    loadForUpdate(index);
+                });
+                return button;
+        }
+         function makeDeleteButton(index) {
+                    var button = document.createElement("button");
+                    button.textContent = "Delete";
+                    button.addEventListener("click", function () {
+                        deleteGrade(index);
+                    });
+                    return button;
+        }
+        function loadForUpdate(index) {
+            selectedIndex = index;
+            txtLRN.value = grades[index].lrn;
+            txtName.value = grades[index].name;
+            txtSubject.value = grades[index].subject;
+            txtGrade.value = grades[index].grade;
+            btnSave.value = "Update";
+            message.textContent = "Change the values, then click the update button above the table.";
+        }
+        function deleteGrade(index){
+            var sure = confirm("Delete record of " + grades[index].name + "?");
+            if (!sure){
+                return;
+            }
+            grades.splice(index, 1);
+            if (selectedIndex === index){
+                selectedIndex = -1;
+                btnSave.value = "Save";
+                txtLRN.value = "";
+                txtSection.value = "";
+                txtName.value = "";
+                txtSubject.value = "";
+                txtGrade.value = "";
+            }else if(selectedIndex > index){
+                selectedIndex = selectedIndex -1;
+            }
+            localStorage.setItem("grades",JSON.stringify(grades));
+            message.textContent = "Deleted";
+            showGrades();
+        }
+        function saveGrade() {
+            var lrn = txtLRN.value.trim();
+            var name = txtName.value.trim();
+            var subject = txtSubject.value.trim();
+            var grade = txtGrade.value.trim();
 
-  btnCancel.onclick = function() {
-    clearForm();
-  };
+            if (lrn === "" || name === "" || subject === "" || grade === "") {
+                 
+                message.textContent = "Please fill in all the boxes.";
+                return;
+            }
+            var record = {lrn: lrn, name: name, subject: subject, grade: grade};
 
-  renderTable();
-</script>
+            if (selectedIndex === -1) {
+
+                   grades.push(record); 
+                   message.textContent = "Saved.";
+
+            }else{
+
+                grades[selectedIndex] = record;
+                message.textContent ="Updated.";
+                selectedIndex = -1;
+                btnSave.value = "Save";
+            }
+
+            localStorage.setItem("grades", JSON.stringify(grades));
+
+            txtLRN.value="";
+            txtName.value="";
+            txtSubject.value="";
+            txtGrade.value="";
+            showGrades();
+          }
+          btnSave.addEventListener("click",saveGrade);
+
+          showGrades();
+        
+      </script>
+    </center>
 </body>
 </html>
