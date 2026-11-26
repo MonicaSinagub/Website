@@ -1,73 +1,63 @@
-
-body { 
-  margin: 0; 
-  padding: 0; 
-  font-family:'𝗇𝖺𝗍𝗎𝗋𝖺𝗅 𝖿𝗈𝗇𝗍 ', sans-serif; 
-  text-align: center;
-  background-image: url('https://pin.it/4rBSbGkW4');
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
-  background-size: cover;
-  min-height: 100vh;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-nav { 
-  background-color: #ff1493; 
-  display: flex; 
-  justify-content: flex-start; 
-  padding: 0 10px; 
-  box-shadow: 0px 4px 15px rgba(255, 20, 147, 0.5);
+body {
+    font-family: "Times New Roman", serif;
+    background-color: #ffffff;
+    text-align: center;
 }
 
-nav a { 
-  color: #ffffff; 
-  text-decoration: none; 
-  padding: 15px 20px; 
-  font-size: 18px; 
-  font-family: 'Bebas Neue', sans-serif;
-  letter-spacing: 2px;
-  text-shadow: 2px 2px 0px #800040;
-  transition: all 0.2s ease;
+/* Navigation Bar */
+nav {
+    width: 100%;
+    background: #d9364f;
+    display: flex;
+    align-items: center;
 }
 
-nav a:hover, nav a.active { 
-  background-color: #ff69b4; 
-  border-bottom: 4px solid #ffeb3b; 
-  text-shadow: 2px 2px 0px #000000;
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 20px 30px;
+    font-size: 20px;
+    transition: 0.3s;
 }
 
-.container { 
-  max-width: 600px; 
-  margin: 40px auto 20px auto; 
-  padding: 25px; 
-  background: rgba(0, 0, 0, 0.15); 
-  border-radius: 18px;
-  border: 1.5px solid #ff75c3;
-  box-shadow: 0px 8px 0px #380323, 
-              0px 12px 20px rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(3px);
+/* Hover Effect */
+nav a:hover {
+    background-color: #fc51c3;
+    border-bottom: 5px solid #f4d35e;
 }
 
-h1 { 
-  font-family: '𝗇𝖺𝗍𝗎𝗋𝖺𝗅 𝖿𝗈𝗇𝗍', serif;
-  font-size: 40px; 
-  font-weight: 900; 
-  color: #ffffff;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 15px;
-  text-shadow: 3px 3px 0px #ff1493, 
-               5px 5px 0px #4a0024,
-               8px 8px 12px rgba(0, 0, 0, 0.9);
+/* Active Button */
+nav a.active {
+    background-color: #f044b7;
+    border-bottom: 5px solid #f4d35e;
 }
 
-p {
-  font-family: '𝗇𝖺𝗍𝗎𝗋𝖺𝗅 𝖿𝗈𝗇𝗍', sans-serif;
-  font-weight: 600;
-  font-size: 17px;
-  color: #ffe6f2;
-  line-height: 1.5;
-  letter-spacing: 1px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+/* About Me Content */
+.container {
+    width: 100%;
+    margin: 130px auto;
+    text-align: center;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 20px;
+}
+
+.container h1 {
+    font-family: "Times New Roman", serif;
+    font-size: 42px;
+    color: #17131b;
+    margin-bottom: 25px;
+}
+
+.container p {
+    font-family: "Times New Roman", serif;
+    font-size: 28px;
+    color: #17131b;
 }
