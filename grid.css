@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@900&family=Bebas+Neue&display=swap');
+
 
 * { 
   margin: 0; 
@@ -30,18 +30,18 @@ nav ul li a:hover, .active {
 }
 
 body { 
-  background-color: #2b0008; 
+  background-color: #f2728a 
 }
 
 h1.myFont {
-  font-family: 'Cinzel', serif;
+  font-family: '𝗇𝖺𝗍𝗎𝗋𝖺𝗅 𝖿𝗈𝗇𝗍', serif;
   font-size: 45px;
   font-weight: 900;
   color: #ff3366 !important;
   text-align: center;
   margin-top: 25px;
   letter-spacing: 2px;
-  text-shadow: 3px 3px 0px #4a000d, 
+  text-shadow: 3px 3px 0px #f24664
                5px 5px 0px rgba(0, 0, 0, 0.3);
 }
 
@@ -80,9 +80,9 @@ p {
 
 .box:hover {
   transform: translateY(-3px);
-  background: linear-gradient(135deg, #5c0e24, #3a0615);
+  background: linear-gradient(135deg, #fc3a51, #fa5585);
   border-color: #ff7597;
-  box-shadow: 0px 9px 0px #1a0209, 
+  box-shadow: 0px 9px 0px #fc6f98, 
               0px 12px 25px rgba(255, 77, 121, 0.4);
 }
 
