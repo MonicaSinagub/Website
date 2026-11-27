@@ -1,34 +1,286 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>monica rose sinagub - About</title>
-    <link rel="stylesheet" href="menu.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brian Bactol - Home</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background: #fff0f5;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* NAVBAR - YUNG DESIGN MO */
+nav {
+    background-color: #f11094;
+    display: flex;
+    justify-content: flex-start;
+    padding: 0 20px;
+    box-shadow: 0 2px 5px rgba(241, 16, 148, 0.3);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li a {
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 14px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Times New Roman', Times, serif;
+    transition: 0.2s;
+}
+
+nav ul li a:hover, 
+nav ul li a.active {
+    background-color: #f13fda;
+    border-bottom: 3px solid #ffcc00;
+}
+
+/* MAIN CONTENT */
+.container {
+    flex: 1;
+    padding: 60px 20px 40px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 72px;
+    letter-spacing: 15px;
+    color: #c2185b;
+    text-shadow: 3px 3px 6px rgba(194, 24, 91, 0.3);
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.content-box {
+    background: #f48fb1;
+    color: white;
+    max-width: 900px;
+    margin: 0 auto 50px;
+    padding: 40px 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(244, 143, 177, 0.4);
+    line-height: 1.8;
+    font-size: 18px;
+    text-align: justify;
+    text-align-last: center;
+}
+
+/* 3 SHORTCUT BOXES */
+.shortcut-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.shortcut-box {
+    background: white;
+    border: 3px solid #f48fb1;
+    border-radius: 15px;
+    padding: 30px 20px;
+    width: 280px;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(244, 143, 177, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.shortcut-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(241, 16, 148, 0.4);
+}
+
+.shortcut-box h3 {
+    color: #c2185b;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.shortcut-box p {
+    color: #666;
+    font-size: 15px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.shortcut-btn {
+    display: inline-block;
+    background: linear-gradient(to right, #ec407a, #f11094);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.shortcut-btn:hover {
+    background: linear-gradient(to right, #f11094, #f13fda);
+}
+
+/* FOOTER - NEW DESIGN WITH SVG */
+footer {
+    background: linear-gradient(to bottom, #ec407a, #f11094);
+    padding: 30px 20px 15px;
+    color: white;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.footerbg {
+    height: 0;
+}
+
+.socialsNavBar {
+    background: transparent;
+    box-shadow: none;
+    justify-content: center;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.socialsNav-List {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.socials .link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+.socials .link:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+.social-icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+.subfooter {
+    font-size: 14px;
+    margin-top: 10px;
+    opacity: 0.9;
+}
+
+.textPreset1 {
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 48px; letter-spacing: 8px; }
+    .content-box { padding: 25px 20px; font-size: 16px; }
+    nav ul { flex-wrap: wrap; justify-content: center; }
+    .shortcut-box { width: 90%; }
+    .socialsNav-List { gap: 15px; }
+}
+</style>
 </head>
-<body> 
-    <style>
-        body { margin: 0; padding: 0; font-family: 'Times New Roman', Times, serif; text-align: center; }
-        nav { background-color: #f11094; display: flex; justify-content: flex-start; padding: 0 20px; }
-        nav a { color: #ffffff; text-decoration: none; padding: 14px 20px; font-size: 16px; }
-        nav a:hover, nav a.active { background-color: #f13fda; border-bottom: 3px solid #ffcc00; }
-        .container { max-width: 800px; margin: 60px auto 0 auto; padding: 20px; }
-        h1 { font-size: 36px; margin-bottom: 20px; font-weight: bold; }
-        h2 { font-size: 26px; font-weight: normal; }
-    </style> 
-    
+<body>
+
+    <!-- NAVIGATION -->
     <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html" class="active">About</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="contact.html">Contact</a>
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
     </nav>
 
+    <!-- MAIN -->
     <div class="container">
-        <h1>About Me</h1>
-        <p>Welcome to my page! I am Monica Rose Sinagub, a Grade 12 student from section Cooper.</p>
+        <h1>HOME</h1>
+        
+        <div class="content-box">
+            <p>
+                Every great achievement begins with the courage to start and the curiosity to keep learning. 
+                As a student exploring the world of programming and web development, I believe that every 
+                line of code is a small step toward turning ideas into reality. Challenges and errors along the 
+                way are not setbacks—they are lessons that sharpen my problem-solving skills and push me 
+                to grow stronger, more creative, and more determined every single day
+            </p>
+        </div>
+
+        <!-- 3 SHORTCUT BOXES -->
+        <div class="shortcut-container">
+            <div class="shortcut-box">
+                <h3>About</h3>
+                <p>Kilalanin mo ako nang mas malalim. Alamin ang background, skills, at goals ko.</p>
+                <a href="about.html" class="shortcut-btn">Go to About</a>
+            </div>
+
+            <div class="shortcut-box">
+                <h3>Portfolio</h3>
+                <p>Tingnan ang mga projects at gawa ko sa programming at web development.</p>
+                <a href="portfolio.html" class="shortcut-btn">View Portfolio</a>
+            </div>
+
+            <div class="shortcut-box">
+                <h3>Contact</h3>
+                <p>May tanong o collaboration? Message mo lang ako dito.</p>
+                <a href="contact.html" class="shortcut-btn">Contact Me</a>
+            </div>
+        </div>
+
     </div>
+
+    <!-- FOOTER - ITO NA YUNG BINIGAY MO -->
+    <footer>
+        <div class="footerbg"></div>
+        <nav class="socialsNavBar" role="navigation" aria-label="Social Links">
+            <ul class="socialsNav-List">
+                <li class="socials">
+                    <a href="https://github.com/MonicaSinagub/My-Website" class="link">
+                        <svg class="social-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+                            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                        </svg>
+                        <strong>GitHub</strong>
+                    </a>
+                </li>
+                <li class="socials">
+                    <a href="https://www.facebook.com/share/1K1fUy21M1/" class="link">
+                        <svg class="social-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+                            <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.874v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
+                        </svg>
+                        <strong>Facebook</strong>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <p class="subfooter"><strong class="textPreset1">2026 TechCooper Solutions | Teacher: Ma'am Jovy</strong></p>
+    </footer>
 
 </body>
 </html>
